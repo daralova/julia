@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Основы моделирования в Julia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" id="prism-light">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" id="prism-dark" disabled>
+    <script src="main.js" defer></script>
+    <script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-julia.min.js"></script>
+</head>
+    <body>
+        <header>
+            <div class="title">Основы моделирования в Julia</div>
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="theme-icon sun" width="24" height="24" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                        <line x1="12" y1="1" x2="12" y2="4" stroke="currentColor" stroke-width="2"/>
+                        <line x1="12" y1="20" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
+                        <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" stroke="currentColor" stroke-width="2"/>
+                        <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2"/>
+                        <line x1="1" y1="12" x2="4" y2="12" stroke="currentColor" stroke-width="2"/>
+                        <line x1="20" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2"/>
+                        <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" stroke="currentColor" stroke-width="2"/>
+                        <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <svg class="theme-icon moon" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+            <nav id="tabs" class="tabs">
+                <button class="tab-btn active" data-tab="theory">Теория</button>
+                <button class="tab-btn" data-tab="practice">Практика</button>
+                <button class="tab-btn" data-tab="test">Тест</button>
+            </nav>
+        </header>
+
+        <button class="menu-btn" id="menuToggle">
+            <svg fill="white" width="30px" height="30px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g id="Menu_Burger">
+                    <path d="M3.563,4.063c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.001c0.276,-0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.001Z"/>
+                    <path d="M3.563,12.501c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.002c0.276,0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.002Z"/>
+                    <path d="M3.563,20.939c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.002c0.276,0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.002Z"/>
+                </g>
+            </svg>
+        </button>
+        <nav id="sideMenu" aria-label="Side menu"></nav>
+
+        <main id="content">
+            <div id="tab-content"></div>
+        </main>
+
+        <footer>&copy; 2026</footer>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+            </div>
+        </div>
+
+    </body>
+</html>
