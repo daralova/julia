@@ -8294,6 +8294,14 @@ function renderTest(testData) {
         MathJax.typesetPromise([tabContent]);
     }
     
+    // Получаем элемент таймера и запускаем таймер ТОЛЬКО если он существует
+    const timerElement = document.getElementById('timer');
+    if (timerElement) {
+        startTestTimer();
+    } else {
+        console.error('Timer element not found');
+    }
+    
     // Обработчики теста
     const submitBtn = document.getElementById('submit-btn');
     const testForm = document.getElementById('test-form');
@@ -8311,14 +8319,20 @@ function renderTest(testData) {
             finishTest();
         });
     }
-    
-    startTestTimer();
 }
 
 // Таймер теста
 function startTestTimer() {
     const timerElement = document.getElementById('timer');
-    if (!timerElement) return;
+    if (!timerElement) {
+        console.error('Timer element not found in startTestTimer');
+        return;
+    }
+    
+    // Очищаем предыдущий таймер если есть
+    if (testTimer) {
+        clearInterval(testTimer);
+    }
     
     testTimer = setInterval(() => {
         timeLeft--;
